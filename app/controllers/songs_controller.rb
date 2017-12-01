@@ -6,13 +6,19 @@ class SongsController < ApplicationController
   end
   
   def new
-    @songs = @chart.songs.new
+    @song = @chart.songs.new
   end
 
   def edit
   end
 
   def create 
+    @song = @chart.songs.new(song_params)
+    if @song.save
+      redirect_to chart_path(@chart, @song)
+    else
+      render :new
+    end
   end
 
   def update
