@@ -1,0 +1,19 @@
+<h1>Billboard Top Charts!</h1>
+<hr />
+
+<table class="ui striped line table">
+    <thead>
+    <tr>
+      <th>Chart Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <th>
+      <% @chart.each do |chart|%>
+        <%= link_to chart.name, chart_path(chart) %>
+        <br />
+      <% end %>
+    </th>
+  </tbody>
+</table>
+

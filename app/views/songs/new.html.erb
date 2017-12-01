@@ -1,2 +1,7 @@
-<h1>Add new songs by: <%= @Artist.name%> </h1>
-<p>Find me in app/views/songs/edit.html.erb</p>
+<h1>Hello World</h1>
+
+<%= form_for @song do |f| %>
+  <%= f.label :Title %>
+  <%= f.text_field :name, required: true %>
+  <%= f.submit%>
+<% end %>
